@@ -14,20 +14,17 @@ return new class extends Migration
     {
         Schema::create('copies', function (Blueprint $table) {
             $table->id('copy_id');
+            //0 puha kotes | 1 kemeny kotes
+            $table->boolean('hardcovered')->default(0);
+            $table->year('publication')->default(date("Y"));
+            //0 konyvtarban | 1 felhasznalonal | 2 selejtes
+            $table->integer('status')->default(0);
             $table->foreignId('book_id')->references('book_id')->on('books');
-            $table->foreignId('user_id')->references('id')->on('users');
             $table->timestamps();
         });
 
-        Copy::create(['user_id' => 1, 'book_id' => 2]);
-        Copy::create(['user_id' => 2, 'book_id' => 4]);
-
-        Copy::create(["book_id" => 1, "user_id" => 1]);
-        Copy::create(["book_id" => 2, "user_id" => 2]);
-        Copy::create(["book_id" => 3, "user_id" => 2]);
-        Copy::create(["book_id" => 4, "user_id" => 2]);
-        Copy::create(["book_id" => 4, "user_id" => 1]);
-        Copy::create(["book_id" => 2, "user_id" => 1]);
+        Copy::create(["book_id" => 1]);
+        Copy::create(['book_id' => 2, 'publication' => 2021, 'hardcovered' => 1]);
     }
 
     /**

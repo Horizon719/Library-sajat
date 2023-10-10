@@ -16,20 +16,19 @@ return new class extends Migration
             $table->id('book_id');
             $table->string('author', 32);
             $table->string('title', 150);
-            $table->integer('pieces')->default(50);
             $table->timestamps();
         });
 
-        Book::create(['author' => 'J.K.Rowling', 'title' => 'Harry Potter és a bőlcsk köve', 'pieces'=> '50']);
-        Book::create(['author' => 'J.K.Rowling', 'title' => 'Harry Potter és a titkok kamrája', 'pieces'=> '42']);
-        Book::create(['author' => 'J.K.Rowling', 'title' => 'Harry Potter és az azkabani fogoly', 'pieces'=> '72']);
-        Book::create(['author' => 'J.K.Rowling', 'title' => 'Harry Potter és a tűz serlege', 'pieces'=> '64']);
-        Book::create(['author' => 'J.K.Rowling', 'title' => 'Harry Potter és a főnix rendje', 'pieces'=> '31']);
-        Book::create(['author' => 'J.K.Rowling', 'title' => 'Harry Potter és a félvér herceg', 'pieces'=> '5']);
-        Book::create(['author' => 'J.K.Rowling', 'title' => 'Harry Potter és a halál ereklyéi', 'pieces'=> '45']);
-        Book::create(["author" => "Kis Pista", "title" => "Apám kacsája", "pieces" => 200]);
-        Book::create(["author" => "Nagy Ernő", "title" => "János utcai lányok", "pieces" => 20]);
-        Book::create(["author" => "Vég Elek", "title" => "Vaskereső kisköbön", "pieces" => 10]);
+        Book::create(['author' => 'J.K.Rowling', 'title' => 'Harry Potter és a bőlcsk köve']);
+        Book::create(['author' => 'J.K.Rowling', 'title' => 'Harry Potter és a titkok kamrája']);
+        Book::create(['author' => 'J.K.Rowling', 'title' => 'Harry Potter és az azkabani fogoly']);
+        Book::create(['author' => 'J.K.Rowling', 'title' => 'Harry Potter és a tűz serlege']);
+        Book::create(['author' => 'J.K.Rowling', 'title' => 'Harry Potter és a főnix rendje']);
+        Book::create(['author' => 'J.K.Rowling', 'title' => 'Harry Potter és a félvér herceg']);
+        Book::create(['author' => 'J.K.Rowling', 'title' => 'Harry Potter és a halál ereklyéi']);
+        Book::create(["author" => "Kis Pista", "title" => "Apám kacsája"]);
+        Book::create(["author" => "Nagy Ernő", "title" => "János utcai lányok"]);
+        Book::create(["author" => "Vég Elek", "title" => "Vaskereső kisköbön"]);
         Book::create(["author" => "Kiss Klára", "title" => "Kaják"]);
     }
 
