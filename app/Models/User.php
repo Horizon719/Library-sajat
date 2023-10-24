@@ -43,4 +43,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function lending(){    
+        return $this->hasMany(Lending::class, 'user_id', 'id');
+    }
 }

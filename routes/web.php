@@ -39,4 +39,16 @@ Route::get('/api/lendings', [LendingController::class,'index']);
 Route::get('/api/lendings/{user_id}/{copy_id}/{start}', [LendingController::class,'show']);
 Route::post('/api/lendings', [LendingController::class,'store']);
 
+
+Route::middleware( ['admin'])->group(function () {
+    Route::apiResource('/users', UserController::class);
+});
+
+Route::patch('/api/update_password/{id}', [UserController::class, 'updatePassword']);
+
+Route::get('/with/copies', [BookController::class, 'bookCopy']);
+Route::get('/with/lending', [LendingController::class, 'lentedBooks']);
+Route::get('/with/countlending', [LendingController::class, 'countLentedBooks']);
+Route::get('/with/distinctcountlending', [LendingController::class, 'distinctLentedBooks']);
+
 require __DIR__.'/auth.php';

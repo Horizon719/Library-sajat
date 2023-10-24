@@ -46,4 +46,8 @@ class BookController extends Controller
     public function newView() {
         return view('book.new');
     }
+
+    public function bookCopy(){
+        return Book::with('copy')->get();
+    }
 }

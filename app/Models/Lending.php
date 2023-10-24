@@ -28,4 +28,7 @@ class Lending extends Model
         return $query;
     }
 
+    public function lendings(){    
+        return $this->belongsTo(User::class, 'user_id', 'id');
+    }
 }
